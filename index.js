@@ -1,18 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.getElementById('searchForm');
 
-    searchForm.addEventListener('submit', handleFormSubmit);
-});
 
-function handleFormSubmit(event) {
-    event.preventDefault(); // Previne o comportamento padrão do formulário
 
-    const artist = document.getElementById('artist').value; // Obtém o nome do artista digitado
-
-    searchArtist(artist);
-}
-
-function searchArtist(artist) {
+function searchId(artist) {
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
 
@@ -36,15 +25,16 @@ function searchArtist(artist) {
     xhr.send();
 }
 
-function displayResults(data) {
+function displayResults(dataSpotify) {
     const respostaElement = document.getElementById('resposta');
 
 
-    if (data.artists && data.artists.length > 0) {
-        const artist = data.artists[0]; // Pega o primeiro artista retornado
+    if (dataSpotify.artists && dataSpotify.artists.length > 0) {
+        const artist = dataSpotify.artists[0]; // Pega o primeiro artista retornado
+        console.log(artist)
         const artistInfo = {
             name: artist.name,
-            image: artist.images[0].url, 
+            image: artist.images[1].url, 
             followers: artist.followers.total,
             genres: artist.genres.join(', '),
             popularity: artist.popularity,
@@ -65,7 +55,3 @@ function displayResults(data) {
 
 
 
-function displayError(message) {
-    const respostaElement = document.getElementById('resposta');
-    respostaElement.textContent = message;
-}
