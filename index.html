@@ -6,6 +6,7 @@
     <title>Search Music</title>
     <script src="index.js"></script>
     <script src="search.js"></script>
+    <script src="tracks.js" ></script>
 </head>
 <body>
     <fieldset>
@@ -14,19 +15,18 @@
 
     <form>
         <label for="artist">Artist</label>
-        <input type="text" id="artist">
+        <input type="text" id="artist" value="Sia">
         <input type="button" name="Enviar" onclick="formularioArtista()">
     </form>
     <br>
     
-    <p id="resposta">resposta irá aparecer aqui</p>
-    <input type="button" onclick="" >
-    <hr>
-
+    <p id="resposta"></p>
+    
+   
 <!-- ----------------------------------------------------------->
 
-    
-
-    <div id="artista">URL APARECER AQUI</div>
+    <div id="artista"></div>
+    <hr>
+    <div id="track"></div>
 </body>
 </html>

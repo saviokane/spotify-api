@@ -31,10 +31,9 @@ function displayResults(dataSpotify) {
 
     if (dataSpotify.artists && dataSpotify.artists.length > 0) {
         const artist = dataSpotify.artists[0]; // Pega o primeiro artista retornado
-        console.log(artist)
         const artistInfo = {
             name: artist.name,
-            image: artist.images[1].url, 
+            image: artist.images[2].url, 
             followers: artist.followers.total,
             genres: artist.genres.join(', '),
             popularity: artist.popularity,

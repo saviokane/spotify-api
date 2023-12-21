@@ -51,6 +51,7 @@ function filtrarPesquisa(resultadoPesquisa) {
     const id = url.substring(url.lastIndexOf("/") + 1);
     console.log(id);
     searchId(id);
+    searchTrack(id);
   } else {
     mostrarResult.innerHTML = `<h1>Nada encontrado</h1>`;
   }
